@@ -1,9 +1,10 @@
 import { Logger, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './usuarios/users.module';
+import { UsersModule } from './app/users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { MoviesModule } from './app/movies/movies.module';
 
 @Module({
   imports: [
@@ -20,7 +21,8 @@ import { ConfigModule } from '@nestjs/config';
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: true, // Constroi e atualiza as entidades automaticamente
       }
-    )],
+    ),
+    MoviesModule],
   controllers: [AppController],
   providers: [AppService],
 })
