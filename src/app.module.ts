@@ -1,13 +1,13 @@
 import { Logger, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsuariosModule } from './usuarios/usuarios.module';
+import { UsersModule } from './usuarios/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    UsuariosModule,
+    UsersModule,
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(
       {
@@ -18,7 +18,7 @@ import { ConfigModule } from '@nestjs/config';
         password: process.env.PG_PASSWORD,
         database: process.env.PG_DB,
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: true, // Cria e atualiza as tabelas postgres automaticamente
+        synchronize: true, // Constroi e atualiza as entidades automaticamente
       }
     )],
   controllers: [AppController],
