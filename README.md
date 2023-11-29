@@ -258,7 +258,7 @@ Tempo de Experiência:
 6. Redis - Primeira experiência ao desenvolver esse desafio.
 7. PostgreSQL - 6 meses.
 
---> Eu simplesmente AMEI desenvolver com essas tecnologias, adoraria ter a oportunidade de trabalhar com elas.
+--> Eu simplesmente AMEI desenvolver com essas tecnologias, adoraria ter a oportunidade de trabalhar com elas!
 
 Expectativa salarial:
 R$ 2.800,00.
