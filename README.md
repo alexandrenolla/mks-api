@@ -12,7 +12,7 @@ Esse projeto é um aplicativo baseado em NestJS que fornece uma API RESTful para
 6. Redis
 7. PostgreSQL
 
-## Installation
+## Instalação
 
 1. Clone o repositório:
 
