@@ -1,73 +1,245 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# NestJS RESTful API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Esse projeto é um aplicativo baseado em NestJS que fornece uma API RESTful para gerenciar um catálogo de filmes e usuários.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Tecnologias
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+1. TypeScript
+2. Nest.js
+3. TypeORM
+4. Swagger
+5. Docker
+6. Redis
+7. PostgreSQL
 
 ## Installation
 
-```bash
-$ npm install
+1. Clone o repositório:
+
+   ```bash
+   git clone <repository-url>
+
+## Execute o Docker Compose:
+1. Abrir o terminal no docker-compoose.yml
+2. Executar o comando `docker exec -ti db bash`
+3. Executar o comando `psql -h localhost -U postgres -p 5432`
+
+## Uso
+
+Você pode interagir com a API usando o Swagger embutido no aplicativo ou ferramentas como o Postman ou qualquer cliente HTTP.
+
+## API Endpoints
+
+### Movies
+
+#### Criar Filme
+
+**Endpoint**: `POST /api/movies`
+
+**Request Body:**
+```json
+{
+  "title": "Titulo Filme",
+  "category": "Ação",
+  "description": "Descrição do filme",
+  "date": "2023-01-01", 
+  "trailer": "http://exemplo.com/trailer"
+}
+
+Response:
+
+{
+  "id": 1,
+  "title": "Titulo Filme",
+  "category": "Ação",
+  "description": "Descrição do filme",
+  "date": "2023-01-01T00:00:00.000Z",
+  "trailer": "http://exemplo.com/trailer"
+} 
 ```
 
-## Running the app
+#### Buscar Todos os Filmes
 
-```bash
-# development
-$ npm run start
+**Endpoint**: `GET /api/movies`
 
-# watch mode
-$ npm run start:dev
+Response:
+```json
+[
+  {
+    "id": 1,
+    "title": "Titulo Filme",
+    "category": "Ação",
+    "description": "Descrição do filme",
+    "date": "2023-01-01T00:00:00.000Z",
+    "trailer": "http://exemplo.com/trailer"
+  },
+  // ...
+] 
+```
+#### Buscar Filme por ID
 
-# production mode
-$ npm run start:prod
+**Endpoint**: `GET /api/movies/:id`
+
+Response:
+```json
+{
+  "id": 1,
+  "title": "Titulo Filme",
+  "category": "Ação",
+  "description": "Descrição do filme",
+  "date": "2023-01-01T00:00:00.000Z",
+  "trailer": "http://exemplo.com/trailer"
+}
 ```
 
-## Test
+### Atualizar Filme por ID
 
-```bash
-# unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
+**Endpoint**: `PUT /api/movies/:id`
 
-# test coverage
-$ npm run test:cov
+**Request Body:**
+```json
+{
+  "title": "Titulo Filme Atualizado",
+  "category": "Ação Atualizado",
+  "description": "Descrição do filme Atualizado",
+  "date": "2023-01-02", 
+  "trailer": "http://exemplo.com/trailer-atualizado"
+}
+
+Response:
+
+{
+  "id": 1,
+  "title": "Titulo Filme Atualizado",
+  "category": "Ação Atualizado",
+  "description": "Descrição do filme Atualizado",
+  "date": "2023-01-02T00:00:00.000Z",
+  "trailer": "http://exemplo.com/trailer-atualizado"
+}
 ```
 
-## Support
+#### Deletar Movie por ID
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+**Endpoint**: `DELETE /api/movies/:id`
 
-## Stay in touch
+Sem request body. Retorna status 204 se bem sucedido.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
+### Users
 
-Nest is [MIT licensed](LICENSE).
+#### Criar Usuário
+
+**Endpoint:** `POST /api/users`
+
+**Request Body:**
+```json
+{
+  "name": "Nome do Usuário",
+  "email": "usuario@email.com"
+}
+```
+Response:
+```json
+{
+  "id": 1,
+  "name": "Nome do Usuário",
+  "email": "usuario@email.com",
+  "createdAt": "2023-01-01T00:00:00.000Z",
+  "updatedAt": "2023-01-01T00:00:00.000Z",
+  "deletedAt": null
+}
+```
+#### Buscar todos os Usuários
+
+**Endpoint:** `GET /api/users`
+
+Response:
+```json
+[
+  {
+    "id": 1,
+    "name": "Nome do Usuário",
+    "email": "usuario@email.com",
+    "createdAt": "2023-01-01T00:00:00.000Z",
+    "updatedAt": "2023-01-01T00:00:00.000Z",
+    "deletedAt": null
+  },
+  // ...
+]
+```
+#### Buscar Usuário por ID
+
+**Endpoint:** `GET /api/users/:id`
+
+Response:
+```json
+{
+  "id": 1,
+  "name": "Nome do Usuário",
+  "email": "usuario@email.com",
+  "createdAt": "2023-01-01T00:00:00.000Z",
+  "updatedAt": "2023-01-01T00:00:00.000Z",
+  "deletedAt": null
+}
+```
+#### Atualizar Usuário por ID
+
+**Endpoint:** `PUT /api/users/:id`
+
+**Request Body:**
+```json
+{
+  "name": "Novo Nome do Usuário",
+  "email": "novousuario@email.com"
+}
+```
+Response:
+```json
+{
+  "id": 1,
+  "name": "Novo Nome do Usuário",
+  "email": "novousuario@email.com",
+  "createdAt": "2023-01-01T00:00:00.000Z",
+  "updatedAt": "2023-01-02T00:00:00.000Z",
+  "deletedAt": null
+}
+```
+#### Deletar Usuário por ID
+
+**Endpoint:** `DELETE /api/users/:id`
+
+Response: Status Code 204 se bem sucedido, sem request body. 
+
+### Entidades
+
+#### User Entity
+
+- **Campos:**
+  - `id` (Chame Primária)
+  - `name` (String, not nullable)
+  - `email` (String, not nullable)
+  - `createdAt` (Date, automaticamente gerado na criação)
+  - `updatedAt` (Date, automaticamente gerado na alteração)
+  - `deletedAt` (Date, automaticamente gerado na deleção)
+
+#### Movie Entity
+
+- **Campos:**
+  - `id` (Chave Primária)
+  - `title` (String, not nullable)
+  - `category` (String, not nullable)
+  - `description` (String, not nullable)
+  - `date` (Date, not nullable)
+  - `trailer` (String, nullable)
+
+## Running Tests
+Para rodar os testes do aplicativo, execute o comando:
+
+```bash
+npm run test
+```
+
+Licença
+Esse projeto é licenciado sob a Licença da MIT.
+
