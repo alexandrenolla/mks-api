@@ -45,9 +45,9 @@ Você pode interagir com a API usando o Swagger embutido no aplicativo ou ferram
   "date": "2023-01-01", 
   "trailer": "http://exemplo.com/trailer"
 }
-
+```
 Response:
-
+```json
 {
   "id": 1,
   "title": "Titulo Filme",
@@ -106,9 +106,9 @@ Response:
   "date": "2023-01-02", 
   "trailer": "http://exemplo.com/trailer-atualizado"
 }
-
+```
 Response:
-
+```json
 {
   "id": 1,
   "title": "Titulo Filme Atualizado",
@@ -211,6 +211,7 @@ Response:
 
 Response: Status Code 204 se bem sucedido, sem request body. 
 
+
 ### Entidades
 
 #### User Entity
@@ -243,3 +244,21 @@ npm run test
 Licença
 Esse projeto é licenciado sob a Licença da MIT.
 
+### Nota para o Avaliador: 
+Não consegui implementar o Swagger, Redis e o deploy por decorrência do prazo, estive trabalhando durante essas 72h do recebimento do teste.
+Porém, caso seja de interesse me fornecer mais um dia apenas, eu implementarei esses requisitos faltantes com o maior prazer!
+
+Tempo de Experiência:
+
+1. TypeScript - Próximo de 1 ano.
+2. Nest.js - Primeira experiência ao desenvolver esse desafio.
+3. TypeORM - Primeira experiência ao desenvolver esse desafio.
+4. Swagger - Próximo de 1 ano.
+5. Docker - 6 meses.
+6. Redis - Primeira experiência ao desenvolver esse desafio.
+7. PostgreSQL - 6 meses.
+
+--> Eu simplesmente AMEI desenvolver com essas tecnologias, adoraria ter a oportunidade de trabalhar com elas.
+
+Expectativa salarial:
+R$ 2.800,00.
