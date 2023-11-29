@@ -17,7 +17,7 @@ Esse projeto é um aplicativo baseado em NestJS que fornece uma API RESTful para
 1. Clone o repositório:
 
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/alexandrenolla/mks-api>
 
 ## Execute o Docker Compose:
 1. Abrir o terminal no docker-compoose.yml
