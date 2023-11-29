@@ -245,10 +245,10 @@ Licença
 Esse projeto é licenciado sob a Licença da MIT.
 
 ### Nota para o Avaliador: 
-Não consegui implementar o Swagger, Redis e o deploy por decorrência do prazo, estive trabalhando durante essas 72h do recebimento do teste.
-Porém, caso seja de interesse me fornecer mais um dia apenas, eu implementarei esses requisitos faltantes com o maior prazer!
+Não consegui implementar o Swagger, Redis e o deploy puramente por decorrência do prazo, pois estive trabalhando durante esse período.
+Porém, caso seja do interesse de vocês, me fornecer mais um dia apenas, eu implementarei esses requisitos faltantes com o maior prazer!
 
-Tempo de Experiência:
+Tempo de Experiência nas tecnologias do projeto:
 
 1. TypeScript - Próximo de 1 ano.
 2. Nest.js - Primeira experiência ao desenvolver esse desafio.
