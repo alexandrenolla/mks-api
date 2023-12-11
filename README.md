@@ -243,22 +243,3 @@ npm run test
 
 Licença
 Esse projeto é licenciado sob a Licença da MIT.
-
-### Nota para o Avaliador: 
-Não consegui implementar o Swagger, Redis e o deploy puramente por decorrência do prazo de 72h, pois estive trabalhando durante esse período.
-Porém, caso seja do interesse de vocês, me fornecer mais um dia apenas, eu implementarei esses requisitos faltantes com o maior prazer!
-
-Tempo de Experiência nas tecnologias do projeto:
-
-1. TypeScript - Próximo de 1 ano.
-2. Nest.js - Primeira experiência ao desenvolver esse desafio.
-3. TypeORM - Primeira experiência ao desenvolver esse desafio.
-4. Swagger - Próximo de 1 ano.
-5. Docker - 6 meses.
-6. Redis - Primeira experiência ao desenvolver esse desafio.
-7. PostgreSQL - 6 meses.
-
---> Eu simplesmente AMEI desenvolver com essas tecnologias, adoraria ter a oportunidade de trabalhar com elas!
-
-Expectativa salarial:
-R$ 2.800,00.
